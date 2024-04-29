@@ -1,0 +1,12 @@
+.main {
+  padding: 20px;
+}
+
+.phonebook-header {
+  display: flex;
+  align-items: center;
+}
+
+.phonebook-icon {
+  margin-right: 10px;
+}

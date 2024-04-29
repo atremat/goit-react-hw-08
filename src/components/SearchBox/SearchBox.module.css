@@ -1,0 +1,19 @@
+.container {
+  border: 1px solid #000;
+  border-radius: 5px;
+  width: 320px;
+  margin-top: 20px;
+  padding: 5px;
+}
+
+.label {
+  display: block;
+}
+
+.searchIcon {
+  margin-right: 10px;
+}
+
+.input {
+  width: 100%;
+}
