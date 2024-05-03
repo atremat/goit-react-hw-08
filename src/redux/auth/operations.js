@@ -35,7 +35,7 @@ export const register = createAsyncThunk(
  * POST @ /users/login
  * body: { email, password }
  */
-export const logIn = createAsyncThunk(
+export const login = createAsyncThunk(
   "auth/login",
   async (credentials, thunkAPI) => {
     try {
@@ -75,6 +75,7 @@ export const refreshUser = createAsyncThunk(
     const persistedToken = state.auth.token;
 
     if (persistedToken === null) {
+      console.log("token = null");
       // If there is no token, exit without performing any request
       return thunkAPI.rejectWithValue("Unable to fetch user");
     }
@@ -82,7 +83,7 @@ export const refreshUser = createAsyncThunk(
     try {
       // If there is a token, add it to the HTTP header and perform the request
       setAuthHeader(persistedToken);
-      const res = await axios.get("/users/me");
+      const res = await axios.get("/users/current");
       return res.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);

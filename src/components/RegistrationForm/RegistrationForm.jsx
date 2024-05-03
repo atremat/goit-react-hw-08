@@ -6,7 +6,7 @@ import css from "./RegistrationForm.module.css";
 import { register } from "../../redux/auth/operations";
 import { useDispatch } from "react-redux";
 
-const FeedbackForm = () => {
+const RegistrationForm = () => {
   const nameFieldId = useId();
   const emailFieldId = useId();
   const passwordFieldId = useId();
@@ -66,4 +66,4 @@ const FeedbackForm = () => {
   );
 };
 
-export default FeedbackForm;
+export default RegistrationForm;
