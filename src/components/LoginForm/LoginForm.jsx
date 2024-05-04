@@ -30,6 +30,8 @@ const LoginForm = () => {
       email: values.email.trim(),
       password: values.password.trim(),
     };
+    console.log("logging");
+    console.log(loginInfo);
     dispatch(login(loginInfo));
     actions.resetForm();
   };

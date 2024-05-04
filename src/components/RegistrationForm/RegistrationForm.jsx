@@ -14,13 +14,13 @@ const RegistrationForm = () => {
   const dispatch = useDispatch();
 
   const initialValues = {
-    username: "",
+    name: "",
     email: "",
     password: "",
   };
 
   const signSchema = Yup.object().shape({
-    username: Yup.string()
+    name: Yup.string()
       .min(2, "Too Short!")
       .max(50, "Too Long!")
       .required("Required"),
@@ -37,6 +37,7 @@ const RegistrationForm = () => {
       email: values.email.trim(),
       password: values.password.trim(),
     };
+    console.log(registerInfo);
     dispatch(register(registerInfo));
     actions.resetForm();
   };
@@ -56,7 +57,7 @@ const RegistrationForm = () => {
         <Field type="email" name="email" id={emailFieldId} />
         <ErrorMessage name="email" component="p" className={css.error} />
 
-        <label htmlFor={passwordFieldId}>Email</label>
+        <label htmlFor={passwordFieldId}>Password</label>
         <Field type="password" name="password" id={passwordFieldId} />
         <ErrorMessage name="password" component="p" className={css.error} />
 
