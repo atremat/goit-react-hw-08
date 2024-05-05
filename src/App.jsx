@@ -13,10 +13,10 @@ import { selectIsRefreshing } from "./redux/auth/selectors";
 import HomePage from "./pages/HomePage/HomePage";
 import { Layout } from "./components/Layout/Layout";
 import { RestrictedRoute } from "./components/RestrictedRoute/RestrictedRoute";
-import RegisterPage from "./pages/RegisterPage/RegisterPage";
+import RegistrationPage from "./pages/RegistrationPage/RegistrationPage";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import { PrivateRoute } from "./components/PrivateRoute/PrivateRoute";
-import Contacts from "./pages/ContactsPage/ContactsPage";
+import ContactsPage from "./pages/ContactsPage/ContactsPage";
 
 const App = () => {
   //to /
@@ -39,19 +39,22 @@ const App = () => {
         <Route
           path="/register"
           element={
-            <RestrictedRoute redirectTo="/tasks" component={<RegisterPage />} />
+            <RestrictedRoute
+              redirectTo="/contacts"
+              component={<RegistrationPage />}
+            />
           }
         />
         <Route
           path="/login"
           element={
-            <RestrictedRoute redirectTo="/tasks" component={<LoginPage />} />
+            <RestrictedRoute redirectTo="/contacts" component={<LoginPage />} />
           }
         />
         <Route
-          path="/tasks"
+          path="/contacts"
           element={
-            <PrivateRoute redirectTo="/login" component={<Contacts />} />
+            <PrivateRoute redirectTo="/login" component={<ContactsPage />} />
           }
         />
       </Routes>

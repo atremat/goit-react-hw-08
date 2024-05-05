@@ -51,7 +51,7 @@ const LoginForm = () => {
         <Field type="password" name="password" id={passwordFieldId} />
         <ErrorMessage name="password" component="p" className={css.error} />
 
-        <button type="submit">Submit</button>
+        <button type="submit">Log in</button>
       </Form>
     </Formik>
   );

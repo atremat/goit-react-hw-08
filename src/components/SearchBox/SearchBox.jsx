@@ -2,7 +2,7 @@ import { useId } from "react";
 import css from "./SearchBox.module.css";
 import { TbUserSearch } from "react-icons/tb";
 import { changeFilter } from "../../redux/filters/slice";
-import { selectNameFilter } from "../../redux/filters/selectors";
+import { selectFilter } from "../../redux/filters/selectors";
 import { useDispatch, useSelector } from "react-redux";
 import { selectContacts } from "../../redux/contacts/selectors";
 
@@ -10,7 +10,7 @@ const SearchBox = () => {
   const searchValueId = useId();
   const dispatch = useDispatch();
 
-  const value = useSelector(selectNameFilter);
+  const value = useSelector(selectFilter);
   const contacts = useSelector(selectContacts);
 
   const handleChange = (e) => {
@@ -22,7 +22,7 @@ const SearchBox = () => {
       <div className={css.container}>
         <label htmlFor="searchValueId" className={css.label}>
           <TbUserSearch className={css.searchIcon} />
-          Find contacts by name
+          Find contacts by name or number
         </label>
         <input
           value={value}

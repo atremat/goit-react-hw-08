@@ -7,7 +7,7 @@ import { selectError, selectLoading } from "../../redux/contacts/selectors";
 import { fetchContacts } from "../../redux/contacts/operations";
 import { useEffect } from "react";
 // import { selectError, selectLoading } from "./redux/contacts/selectors";
-const Contacts = () => {
+const ContactsPage = () => {
   const isLoading = useSelector(selectLoading);
   const error = useSelector(selectError);
   const dispatch = useDispatch();
@@ -35,4 +35,4 @@ const Contacts = () => {
   );
 };
 
-export default Contacts;
+export default ContactsPage;
