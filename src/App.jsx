@@ -16,7 +16,7 @@ import { RestrictedRoute } from "./components/RestrictedRoute/RestrictedRoute";
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import { PrivateRoute } from "./components/PrivateRoute/PrivateRoute";
-import Contacts from "./components/Contacts/Contacts";
+import Contacts from "./pages/ContactsPage/ContactsPage";
 
 const App = () => {
   //to /
