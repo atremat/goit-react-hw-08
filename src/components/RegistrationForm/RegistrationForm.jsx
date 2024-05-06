@@ -53,7 +53,7 @@ const RegistrationForm = () => {
       onSubmit={handleSubmit}
       validationSchema={signSchema}
     >
-      <Form>
+      <Form className={css.form}>
         <label htmlFor={nameFieldId}>Username</label>
         <Field type="text" name="name" id={nameFieldId} />
         <ErrorMessage name="name" component="p" className={css.error} />

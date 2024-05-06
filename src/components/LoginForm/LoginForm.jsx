@@ -50,12 +50,12 @@ const LoginForm = () => {
       onSubmit={handleSubmit}
       validationSchema={signSchema}
     >
-      <Form>
+      <Form className={css.form}>
         <label htmlFor={emailFieldId}>Email</label>
         <Field type="email" name="email" id={emailFieldId} />
         <ErrorMessage name="email" component="p" className={css.error} />
 
-        <label htmlFor={passwordFieldId}>Email</label>
+        <label htmlFor={passwordFieldId}>Password</label>
         <Field type="password" name="password" id={passwordFieldId} />
         <ErrorMessage name="password" component="p" className={css.error} />
 

@@ -9,6 +9,12 @@
   align-items: center;
   gap: 5px;
   margin-top: 20px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 8px 0px;
+  transition: scale 0.3s ease;
+}
+
+.form:hover {
+  scale: 1.05;
 }
 
 .nameWrapper {
