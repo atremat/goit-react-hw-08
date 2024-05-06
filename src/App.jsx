@@ -25,9 +25,7 @@ const App = () => {
   useEffect(() => {
     dispatch(refreshUser())
       .unwrap()
-      .then(() => {
-        toast.success("Login success!");
-      })
+      .then(() => toast.success("Login success!"))
       .catch(() => {});
   }, [dispatch]);
 

@@ -5,6 +5,7 @@ import { selectFilteredContacts } from "../../redux/filters/selectors";
 import { useState } from "react";
 import ModalConfirm from "../ModalConfirm/ModalConfirm";
 import { deleteContact } from "../../redux/contacts/operations";
+import toast from "react-hot-toast";
 
 const ContactList = () => {
   const visibleContacts = useSelector(selectFilteredContacts);
@@ -19,7 +20,11 @@ const ContactList = () => {
   };
 
   const handleConfirmDelete = () => {
-    dispatch(deleteContact(id));
+    dispatch(deleteContact(id))
+      .unwrap()
+      .then(() => toast.success("Contact deleted."))
+      .catch(() => toast.error("Error occurred when deleting contact."));
+
     setIsModalOpen(false);
     setId(null);
   };

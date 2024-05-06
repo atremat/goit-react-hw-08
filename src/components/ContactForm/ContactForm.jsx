@@ -5,6 +5,7 @@ import css from "./ContactForm.module.css";
 import { LuUserPlus } from "react-icons/lu";
 import { useDispatch } from "react-redux";
 import { addContact } from "../../redux/contacts/operations";
+import toast from "react-hot-toast";
 
 const contactSchema = Yup.object().shape({
   name: Yup.string()
@@ -31,11 +32,15 @@ const ContactForm = () => {
 
   const handleSubmit = (values, actions) => {
     const newContact = {
-      id: "$datatype.uuid",
       name: values.name.trim(),
       number: values.number.trim(),
     };
-    dispatch(addContact(newContact));
+
+    dispatch(addContact(newContact))
+      .unwrap()
+      .then(() => toast.success("Contact saved."))
+      .catch(() => toast.error("Error occurred when saving contact."));
+
     actions.resetForm();
   };
 

@@ -40,6 +40,7 @@ const LoginForm = () => {
       .catch(() => {
         toast.error("User with this login and password does not exist!");
       });
+
     actions.resetForm();
   };
 

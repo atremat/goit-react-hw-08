@@ -38,15 +38,12 @@ const RegistrationForm = () => {
       email: values.email.trim(),
       password: values.password.trim(),
     };
-    console.log(registerInfo);
+
     dispatch(register(registerInfo))
       .unwrap()
-      .then(() => {
-        toast.success("Registration success!");
-      })
-      .catch(() => {
-        toast.error("User with this login already exists !");
-      });
+      .then(() => toast.success("Registration success!"))
+      .catch(() => toast.error("User with this login already exists !"));
+
     actions.resetForm();
   };
 
