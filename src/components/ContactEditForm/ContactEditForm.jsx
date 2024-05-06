@@ -26,7 +26,6 @@ const ContactEditForm = () => {
   const numberFieldId = useId();
 
   const contactToEdit = useSelector(selectContactForEdit);
-  console.log("contactToEdit: ", contactToEdit);
   const dispatch = useDispatch();
 
   const initialValues = {
@@ -40,7 +39,7 @@ const ContactEditForm = () => {
       name: values.name.trim(),
       number: values.number.trim(),
     };
-    console.log("submitted contact: ", editedContact);
+    
     dispatch(editContact(editedContact));
     dispatch(setContactForEdit(null));
     actions.resetForm();
