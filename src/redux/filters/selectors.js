@@ -6,7 +6,6 @@ export const selectFilter = (state) => state.filters.name;
 export const selectFilteredContacts = createSelector(
   [selectContacts, selectFilter],
   (contacts, valueFilter) => {
-    console.log(contacts);
     const visibleContacts = contacts.filter(({ name, number }) => {
       return (
         name.toLowerCase().includes(valueFilter.trim().toLowerCase()) ||

@@ -2,13 +2,10 @@ import { FaPhone } from "react-icons/fa6";
 import { FaUser } from "react-icons/fa";
 import css from "./Contact.module.css";
 import { LuUserMinus } from "react-icons/lu";
-import { useDispatch } from "react-redux";
-import { deleteContact } from "../../redux/contacts/operations";
 
-const Contact = ({ contact }) => {
-  const dispatch = useDispatch();
-
+const Contact = ({ contact, openModal }) => {
   const { id, name, number } = contact;
+
   return (
     <li className={css.listItem}>
       <div className={css.leftWrapper}>
@@ -22,10 +19,7 @@ const Contact = ({ contact }) => {
         </div>
       </div>
       <div className={css.btnWrapper}>
-        <button
-          className={css.btnDelete}
-          onClick={() => dispatch(deleteContact(id))}
-        >
+        <button className={css.btnDelete} onClick={() => openModal(id)}>
           <LuUserMinus className={css.deleteIcon} />
           Delete
         </button>
