@@ -5,6 +5,7 @@ import { ErrorMessage } from "formik";
 import css from "./RegistrationForm.module.css";
 import { register } from "../../redux/auth/operations";
 import { useDispatch } from "react-redux";
+import toast from "react-hot-toast";
 
 const RegistrationForm = () => {
   const nameFieldId = useId();
@@ -38,7 +39,14 @@ const RegistrationForm = () => {
       password: values.password.trim(),
     };
     console.log(registerInfo);
-    dispatch(register(registerInfo));
+    dispatch(register(registerInfo))
+      .unwrap()
+      .then(() => {
+        toast.success("Registration success!");
+      })
+      .catch(() => {
+        toast.error("User with this login already exists !");
+      });
     actions.resetForm();
   };
 

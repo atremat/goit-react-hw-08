@@ -6,7 +6,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectError, selectLoading } from "../../redux/contacts/selectors";
 import { fetchContacts } from "../../redux/contacts/operations";
 import { useEffect } from "react";
-// import { selectError, selectLoading } from "./redux/contacts/selectors";
+import DocumentTitle from "../../components/DocumentTitle/DocumentTitle";
+
 const ContactsPage = () => {
   const isLoading = useSelector(selectLoading);
   const error = useSelector(selectError);
@@ -18,6 +19,8 @@ const ContactsPage = () => {
 
   return (
     <>
+      <DocumentTitle>Contacts</DocumentTitle>
+
       <div className="main">
         <h1 className="phonebook-header">
           <PiUserSquareFill className="phonebook-icon" />

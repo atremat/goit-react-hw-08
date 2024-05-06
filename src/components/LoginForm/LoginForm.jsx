@@ -5,6 +5,7 @@ import { ErrorMessage } from "formik";
 import css from "./LoginForm.module.css";
 import { login } from "../../redux/auth/operations";
 import { useDispatch } from "react-redux";
+import toast from "react-hot-toast";
 
 const LoginForm = () => {
   const emailFieldId = useId();
@@ -30,9 +31,15 @@ const LoginForm = () => {
       email: values.email.trim(),
       password: values.password.trim(),
     };
-    console.log("logging");
-    console.log(loginInfo);
-    dispatch(login(loginInfo));
+
+    dispatch(login(loginInfo))
+      .unwrap()
+      .then(() => {
+        toast.success("Login success!");
+      })
+      .catch(() => {
+        toast.error("User with this login and password does not exist!");
+      });
     actions.resetForm();
   };
 

@@ -1,33 +1,34 @@
 import "modern-normalize";
 import "./App.css";
+
 import { Route, Routes } from "react-router-dom";
-// import { PiUserSquareFill } from "react-icons/pi";
-// import ContactForm from "./components/ContactForm/ContactForm";
-// import SearchBox from "./components/SearchBox/SearchBox";
-// import ContactList from "./components/ContactList/ContactList";
-import { useEffect } from "react";
+import { useEffect, lazy } from "react";
 import { useDispatch, useSelector } from "react-redux";
-// import { selectError, selectLoading } from "./redux/contacts/selectors";
 import { refreshUser } from "./redux/auth/operations";
 import { selectIsRefreshing } from "./redux/auth/selectors";
-import HomePage from "./pages/HomePage/HomePage";
 import { Layout } from "./components/Layout/Layout";
 import { RestrictedRoute } from "./components/RestrictedRoute/RestrictedRoute";
-import RegistrationPage from "./pages/RegistrationPage/RegistrationPage";
-import LoginPage from "./pages/LoginPage/LoginPage";
 import { PrivateRoute } from "./components/PrivateRoute/PrivateRoute";
-import ContactsPage from "./pages/ContactsPage/ContactsPage";
+import toast, { Toaster } from "react-hot-toast";
+
+const HomePage = lazy(() => import("./pages/HomePage/HomePage"));
+const RegistrationPage = lazy(() =>
+  import("./pages/RegistrationPage/RegistrationPage")
+);
+const ContactsPage = lazy(() => import("./pages/ContactsPage/ContactsPage"));
+const LoginPage = lazy(() => import("./pages/LoginPage/LoginPage"));
 
 const App = () => {
-  //to /
-  // const isLoading = useSelector(selectLoading);
-  // const error = useSelector(selectError);
-
   const isRefreshing = useSelector(selectIsRefreshing);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(refreshUser());
+    dispatch(refreshUser())
+      .unwrap()
+      .then(() => {
+        toast.success("Login success!");
+      })
+      .catch(() => {});
   }, [dispatch]);
 
   return isRefreshing ? (
@@ -58,6 +59,7 @@ const App = () => {
           }
         />
       </Routes>
+      <Toaster />
     </Layout>
   );
 };

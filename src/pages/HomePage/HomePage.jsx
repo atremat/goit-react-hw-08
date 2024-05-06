@@ -1,7 +1,11 @@
+import DocumentTitle from "../../components/DocumentTitle/DocumentTitle";
+
 const HomePage = () => {
   return (
     <>
-      <p>HomePage</p>
+      <DocumentTitle>Home</DocumentTitle>
+
+      <p>Your personal contact list</p>
     </>
   );
 };
