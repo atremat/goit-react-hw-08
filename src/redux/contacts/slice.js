@@ -27,16 +27,10 @@ const contactsSlice = createSlice({
   name: "contacts",
   initialState: contactsInitialState,
   reducers: {
+    //save {id,name,number}, which we have to edit
     setContactForEdit: (state, action) => {
       state.contactForEdit = action.payload;
     },
-    // updateContact: (state, action) => {
-    //   state.items = state.items.map((item) => {
-    //     return item.id === state.currentTodo.id
-    //       ? { text: action.payload, id: state.currentTodo.id }
-    //       : item;
-    //   });
-    // },
   },
   extraReducers: (builder) => {
     builder

@@ -12,7 +12,7 @@ const ContactList = () => {
   const dispatch = useDispatch();
 
   const [isModalOpen, setIsModalOpen] = useState(false);
-  //id to delete
+  //set contact to delete by id
   const [id, setId] = useState(null);
 
   const openModal = (contactId) => {

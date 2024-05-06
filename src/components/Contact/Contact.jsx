@@ -12,7 +12,6 @@ const Contact = ({ contact, openModal }) => {
 
   const handleEdit = () => {
     dispatch(setContactForEdit({ id, name, number }));
-    // dispatch(editContact({ id, name, number }));
   };
 
   return (

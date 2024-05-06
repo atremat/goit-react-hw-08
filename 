@@ -1,0 +1,71 @@
+[33mcommit e9fbe3c87a01a00894eb58f5caaae659303d913c[m[33m ([m[1;36mHEAD -> [m[1;32medit-feature[m[33m)[m
+Author: Artem <atremat@gmail.com>
+Date:   Mon May 6 23:33:58 2024 +0300
+
+    edit contact feature
+
+[33mcommit 889a941a3152f9f4e5a1dff44f13766a5392ae79[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m
+Author: Artem <atremat@gmail.com>
+Date:   Mon May 6 19:58:02 2024 +0300
+
+    toasts add
+
+[33mcommit c76b1de89d1d6cec3609999dfb69e32042aa7015[m
+Author: Artem <atremat@gmail.com>
+Date:   Mon May 6 17:17:02 2024 +0300
+
+    modal confirmation add
+
+[33mcommit 1fb6c86d34e78a6761c21bd2834f60c85f8267ae[m
+Author: Artem <atremat@gmail.com>
+Date:   Mon May 6 03:38:28 2024 +0300
+
+    toaster and helmet add
+
+[33mcommit adeb78df257e856b8f30fab012e9700fe0da43ed[m
+Author: Artem <atremat@gmail.com>
+Date:   Mon May 6 01:35:24 2024 +0300
+
+    add filter by number
+
+[33mcommit b5f232e6e19c006638c279159b03d319a417e856[m
+Author: Artem <atremat@gmail.com>
+Date:   Sun May 5 22:21:40 2024 +0300
+
+    add delete contact fix
+
+[33mcommit 75ddfb8130e37dd957acefd15925cd00396b3b63[m
+Author: Artem <atremat@gmail.com>
+Date:   Sun May 5 00:45:44 2024 +0300
+
+    auth fix
+
+[33mcommit 41603c27c89aa66e839d04e13eb98d9d122c7b6f[m
+Author: Artem <atremat@gmail.com>
+Date:   Fri May 3 23:05:49 2024 +0300
+
+    routes add
+
+[33mcommit 738802577a9f125dd99ea2175a239cdb02c100ec[m
+Author: Artem <atremat@gmail.com>
+Date:   Thu May 2 00:56:33 2024 +0300
+
+    registrationForm add
+
+[33mcommit 7f2ac9fdcb805bb058e53b74ae760475270ee598[m
+Author: Artem <atremat@gmail.com>
+Date:   Wed May 1 23:30:09 2024 +0300
+
+    auth files add
+
+[33mcommit 0bd61c0e88a04240e257cca2587fd70d83a1f34f[m
+Author: Artem <atremat@gmail.com>
+Date:   Tue Apr 30 21:51:43 2024 +0300
+
+    redux folders add
+
+[33mcommit 486e00541715b2c505dde5f4f93a56110abc2be2[m
+Author: Artem <atremat@gmail.com>
+Date:   Mon Apr 29 23:40:17 2024 +0300
+
+    Initial commit
