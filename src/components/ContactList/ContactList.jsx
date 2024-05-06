@@ -12,6 +12,7 @@ const ContactList = () => {
   const dispatch = useDispatch();
 
   const [isModalOpen, setIsModalOpen] = useState(false);
+  //id to delete
   const [id, setId] = useState(null);
 
   const openModal = (contactId) => {
