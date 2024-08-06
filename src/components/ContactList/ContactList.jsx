@@ -15,6 +15,8 @@ const ContactList = () => {
   //set contact to delete by id
   const [id, setId] = useState(null);
 
+  console.log(visibleContacts);
+
   const openModal = (contactId) => {
     setIsModalOpen(true);
     setId(contactId);
@@ -40,7 +42,11 @@ const ContactList = () => {
       <ul className={css.list}>
         {visibleContacts.map((contact) => {
           return (
-            <Contact contact={contact} key={contact.id} openModal={openModal} />
+            <Contact
+              contact={contact}
+              key={contact._id}
+              openModal={openModal}
+            />
           );
         })}
       </ul>

@@ -33,7 +33,7 @@ const ContactForm = () => {
   const handleSubmit = (values, actions) => {
     const newContact = {
       name: values.name.trim(),
-      number: values.number.trim(),
+      phoneNumber: values.number.trim(),
     };
 
     dispatch(addContact(newContact))
