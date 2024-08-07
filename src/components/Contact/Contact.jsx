@@ -7,11 +7,11 @@ import { useDispatch } from "react-redux";
 import { setContactForEdit } from "../../redux/contacts/slice";
 
 const Contact = ({ contact, openModal }) => {
-  const { id, name, phoneNumber } = contact;
+  const { _id, name, phoneNumber } = contact;
   const dispatch = useDispatch();
 
   const handleEdit = () => {
-    dispatch(setContactForEdit({ id, name, phoneNumber }));
+    dispatch(setContactForEdit({ _id, name, phoneNumber }));
   };
 
   return (
@@ -27,7 +27,7 @@ const Contact = ({ contact, openModal }) => {
         </div>
       </div>
       <div className={css.btnWrapper}>
-        <button className={css.btnDelete} onClick={() => openModal(id)}>
+        <button className={css.btnDelete} onClick={() => openModal(_id)}>
           <LuUserMinus className={css.deleteIcon} />
           Delete
         </button>

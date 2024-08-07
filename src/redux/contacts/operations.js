@@ -54,8 +54,14 @@ export const deleteContact = createAsyncThunk(
           Authorization: `Bearer ${accessToken}`,
         },
       });
-      const response = await axios.get("/contacts");
-      return response.data;
+
+      const response = await axios.get("/contacts", {
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+        },
+      });
+
+      return response.data.data.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
     }
