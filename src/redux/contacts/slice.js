@@ -61,11 +61,11 @@ const contactsSlice = createSlice({
         state.loading = false;
 
         state.items = state.items.map((item) => {
-          return item.id === action.payload.id
+          return item._id === action.payload._id
             ? {
                 name: action.payload.name,
-                id: action.payload.id,
-                number: action.payload.number,
+                _id: action.payload._id,
+                phoneNumber: action.payload.phoneNumber,
               }
             : item;
         });

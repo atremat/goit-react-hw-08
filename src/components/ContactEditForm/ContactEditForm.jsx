@@ -14,7 +14,7 @@ const contactSchema = Yup.object().shape({
     .min(3, "Too Short!")
     .max(50, "Too Long!")
     .required("Required"),
-  number: Yup.string()
+  phoneNumber: Yup.string()
     .matches(/^\+?[ ()0-9-]+$/, "Invalid phone number")
     .min(3, "Too Short!")
     .max(50, "Too Long!")
@@ -30,16 +30,16 @@ const ContactEditForm = () => {
 
   const initialValues = {
     name: contactToEdit.name,
-    number: contactToEdit.number,
+    phoneNumber: contactToEdit.phoneNumber,
   };
 
   const handleSubmit = (values, actions) => {
     const editedContact = {
-      id: contactToEdit.id,
+      _id: contactToEdit._id,
       name: values.name.trim(),
-      number: values.number.trim(),
+      phoneNumber: values.phoneNumber.trim(),
     };
-    
+
     dispatch(editContact(editedContact));
     dispatch(setContactForEdit(null));
     actions.resetForm();
@@ -71,11 +71,15 @@ const ContactEditForm = () => {
           </label>
           <Field
             type="tel"
-            name="number"
+            name="phoneNumber"
             id={numberFieldId}
             className={css.input}
           />
-          <ErrorMessage name="number" component="p" className={css.error} />
+          <ErrorMessage
+            name="phoneNumber"
+            component="p"
+            className={css.error}
+          />
         </div>
 
         <div className={css.btnWrapper}>
