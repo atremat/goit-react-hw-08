@@ -7,11 +7,11 @@ import { useDispatch } from "react-redux";
 import { setContactForEdit } from "../../redux/contacts/slice";
 
 const Contact = ({ contact, openModal }) => {
-  const { id, name, number } = contact;
+  const { id, name, phoneNumber } = contact;
   const dispatch = useDispatch();
 
   const handleEdit = () => {
-    dispatch(setContactForEdit({ id, name, number }));
+    dispatch(setContactForEdit({ id, name, phoneNumber }));
   };
 
   return (
@@ -23,7 +23,7 @@ const Contact = ({ contact, openModal }) => {
         </div>
         <div className={css.numberWrapper}>
           <FaPhone />
-          <span className={css.number}>{number}</span>
+          <span className={css.number}>{phoneNumber}</span>
         </div>
       </div>
       <div className={css.btnWrapper}>

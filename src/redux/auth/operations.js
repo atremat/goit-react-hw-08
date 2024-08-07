@@ -1,7 +1,8 @@
 import axios from "axios";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
-axios.defaults.baseURL = "https://contacts-app-mm7s.onrender.com";
+// axios.defaults.baseURL = "https://contacts-app-mm7s.onrender.com";
+axios.defaults.baseURL = "http://localhost:3000";
 
 // Utility to add JWT
 const setAuthHeader = (token) => {
@@ -12,6 +13,12 @@ const setAuthHeader = (token) => {
 const clearAuthHeader = () => {
   axios.defaults.headers.common.Authorization = "";
 };
+
+const api = axios.create({
+  baseURL: "http://localhost:3000", // Змінити на ваш базовий URL API
+  // baseURL: "http://example.com/api", // Змінити на ваш базовий URL API
+  withCredentials: true, // Дозволити передачу файлів cookie
+});
 
 /*
  * POST @ /users/signup
@@ -39,7 +46,10 @@ export const login = createAsyncThunk(
   "auth/login",
   async (credentials, thunkAPI) => {
     try {
-      const res = await axios.post("/auth/login", credentials);
+      const res = await axios.post("/auth/login", credentials, {
+        withCredentials: true, // Важливо для передачі cookies
+      });
+
       // After successful login, add the token to the HTTP header
       setAuthHeader(res.data.data.accessToken);
 
@@ -83,7 +93,8 @@ export const refreshUser = createAsyncThunk(
     try {
       // If there is a token, add it to the HTTP header and perform the request
       setAuthHeader(persistedToken);
-      const res = await axios.get("/auth/refresh");
+      const res = await api.post("/auth/refresh");
+
       return res.data.data.accessToken;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);

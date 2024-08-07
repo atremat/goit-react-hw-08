@@ -15,8 +15,6 @@ const ContactList = () => {
   //set contact to delete by id
   const [id, setId] = useState(null);
 
-  console.log(visibleContacts);
-
   const openModal = (contactId) => {
     setIsModalOpen(true);
     setId(contactId);

@@ -26,7 +26,7 @@ const App = () => {
     dispatch(refreshUser())
       .unwrap()
       .then(() => toast.success("Login success!"))
-      .catch(() => {});
+      .catch(() => toast.error("Session not found!"));
   }, [dispatch]);
 
   return isRefreshing ? (
